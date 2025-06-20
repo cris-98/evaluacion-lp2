@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+
+    <title>Formulario</title>
+</head>
+<body>
+<h1>Registrar Pelicula</h1>
+<form th:action="@{peliculas/guardar}" th:objects="${pelicula}" method="post">
+  <p>
+    Titulo: <input type="text" th:field="*{titulo}"/>
+    <span th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span>
+  </p>
+  <p>
+    Género: <input type="text" th:field="*{genero}"/>
+    <span th:if="${#fields.has.Errors('genero')}" th:errors="*{genero}"></span>
+  </p>
+  <p>
+    Stock: <input type="number" th:fields="*{stock}"/>
+    <span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}"></span>
+  </p>
+  <button type="submit">Guardar</buttontype>
+U </form>
+</body>
+</html>
